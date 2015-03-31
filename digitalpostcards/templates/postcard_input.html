@@ -1,0 +1,56 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet"
+        href="{{ url_for('.static', filename='css/postcard.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('.static', filename='js/vendor/underscore-1.8.2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('.static', filename='js/postcard.js') }}"></script>
+    <script type="text/javascript">
+
+    // load the postcard
+    $('#mail_popup').postcard();
+    $('#mail_popup').postcard('open');
+
+    </script>
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block main %}
+
+<div class="container postcard-blur-wrapper">
+    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, provident, veniam. Explicabo architecto omnis quos ea blanditiis esse? Dicta, rem doloribus repudiandae aliquam commodi quam dolor pariatur unde ducimus sint!</p>
+    <p>Corrupti reprehenderit impedit adipisci alias aut dolor fuga eos praesentium illo facilis sint esse ad obcaecati quia veniam velit officia delectus, illum est. Error aspernatur accusamus tempore, quia suscipit, numquam.</p>
+    <p>Velit veritatis rerum quia magni sunt officia nemo cupiditate unde inventore eligendi quisquam, alias eum consectetur consequatur. Beatae dolores, consequuntur magnam aliquam optio, maxime corrupti odio dolor assumenda culpa minus.</p>
+    <p>Atque fugit ad ipsam iure unde asperiores commodi vitae, sit odio itaque aliquid in culpa, aliquam. Aliquam alias ipsa, a animi dolore velit officiis aperiam qui, distinctio suscipit quisquam non.</p>
+    <p>Soluta pariatur assumenda officia nulla ipsum commodi molestias amet. Velit nihil quae consequatur eum enim aspernatur iste doloremque cum, praesentium, deserunt, suscipit magnam aperiam sint debitis quibusdam ducimus odit placeat.</p>
+    <p>Recusandae beatae adipisci mollitia sapiente, placeat. Quidem nostrum nulla quae quam voluptas laborum fuga, id ex adipisci ea vitae animi nam, voluptatum! Eum corporis obcaecati sit, odit, necessitatibus molestias repellat.</p>
+    <p>Explicabo modi impedit eum, fugiat esse quas. Nesciunt aspernatur porro optio impedit quidem tempora non praesentium recusandae veritatis, dolore, dignissimos beatae assumenda quo ad modi laboriosam enim est repellat aut.</p>
+    <p>Laborum accusamus saepe sequi aperiam voluptates rem, fugit aut natus, ex sit magni itaque cum delectus expedita alias ut nam harum dolorem vel eum cupiditate. Recusandae velit, voluptate deleniti excepturi!</p>
+    <p>Dolor nulla iusto ducimus inventore expedita veritatis. Eos numquam, dolor nihil modi veritatis temporibus veniam nobis consequuntur sed animi harum, quaerat. Praesentium fugiat consectetur fuga facere deserunt sed accusantium consequatur.</p>
+    <p>Nesciunt hic quae iusto debitis necessitatibus magnam et vel temporibus natus in, vero distinctio fuga commodi incidunt dicta magni tenetur nostrum voluptates assumenda nihil, eaque. Accusamus quia eum porro, ex!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni rerum adipisci dolorum, ipsum molestiae animi voluptatem laborum neque nulla commodi fugit temporibus eligendi repellat tempore omnis eveniet optio quidem delectus.</p>
+    <p>Consectetur ipsum corrupti animi impedit natus explicabo? Voluptas nemo vitae voluptatem, tempora sit magni obcaecati ullam quisquam cumque doloribus facere iste, sunt, hic recusandae! Nulla repudiandae, vel perspiciatis. Sunt, autem?</p>
+    <p>Doloribus, dolorem architecto corrupti qui ratione porro quod eos vero animi sed fugiat atque non, dicta molestiae reiciendis saepe numquam, in voluptatum labore excepturi tempore necessitatibus. Nam eos dolor reprehenderit?</p>
+    <p>Recusandae beatae adipisci mollitia sapiente, placeat. Quidem nostrum nulla quae quam voluptas laborum fuga, id ex adipisci ea vitae animi nam, voluptatum! Eum corporis obcaecati sit, odit, necessitatibus molestias repellat.</p>
+    <p>Explicabo modi impedit eum, fugiat esse quas. Nesciunt aspernatur porro optio impedit quidem tempora non praesentium recusandae veritatis, dolore, dignissimos beatae assumenda quo ad modi laboriosam enim est repellat aut.</p>
+    <p>Laborum accusamus saepe sequi aperiam voluptates rem, fugit aut natus, ex sit magni itaque cum delectus expedita alias ut nam harum dolorem vel eum cupiditate. Recusandae velit, voluptate deleniti excepturi!</p>
+    <p>Dolor nulla iusto ducimus inventore expedita veritatis. Eos numquam, dolor nihil modi veritatis temporibus veniam nobis consequuntur sed animi harum, quaerat. Praesentium fugiat consectetur fuga facere deserunt sed accusantium consequatur.</p>
+    <p>Nesciunt hic quae iusto debitis necessitatibus magnam et vel temporibus natus in, vero distinctio fuga commodi incidunt dicta magni tenetur nostrum voluptates assumenda nihil, eaque. Accusamus quia eum porro, ex!</p>
+    <p class="text-center">
+        <button class="btn btn-primary" onclick="$('#mail_popup').postcard('open');">Open Postcard</button>
+    </p>
+</div>
+
+<div id="mail_popup"></div>
+
+{% endblock %}
+
+

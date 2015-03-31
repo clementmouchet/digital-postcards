@@ -1,0 +1,104 @@
+<style>
+
+.postcard {
+    padding: 10px;
+}
+
+.postcard .back {
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.postcard .back .details {
+  margin-bottom: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.heading {
+    font-size: 1.2em;
+}
+
+address {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.42857143;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+
+</style>
+
+<p class="heading">
+    Dear <a href="mailto:{{ postcard.recipient }}">{{ postcard.recipient_name }}</a>,
+</p>
+<p class="heading">
+    <a href="mailto:{{ postcard.sender }}">{{ postcard.sender_name }}</a> send you a Digital Postcard, from {{ postcard.source_url }}
+</p>
+
+<h3><a href="{{ postcard.url }}">Follow this link to read the full postcard online</a></h3>
+<hr>
+<div id="mail_popup">
+    <div class="postcard">
+        <div class="front">
+            <img src="{{ postcard.image }}" alt="{{ postcard.title }}">
+        </div>
+        <div class="back">
+            <div class="row details">
+                <div class="col-md-3 col-xs-3 text-left text-uppercase">
+                    <h3>{{ postcard.title }}
+                    <small>{{ postcard.short_desc }}</small></h3>
+                </div>
+                <div class="col-md-6 col-xs-6 text-left">
+                    <blockquote>
+                      <p>
+                        {{ postcard.long_desc }}
+                      </p>
+                    </blockquote>
+                </div>
+                <div class="col-md-1 col-xs-1"></div>
+                <div class="col-md-2 col-xs-2 stamp" ></div>
+            </div>
+            <div class="row content">
+                <div class="col-md-7 col-xs-7 text-left">
+                    {{ postcard.body }}
+                </div>
+                <div class="col-md-5 col-xs-5 text-right">
+                    <address>
+                        <strong>{{ postcard.recipient_name }}</strong><br>
+                        {{ postcard.address_line_1 }}<br>
+                        {{ postcard.address_line_2 }}<br>
+                        {{ postcard.address_postcode }}<br>
+                        {{ postcard.address_city }}
+                    </address>
+                    <address>
+                        <strong>{{ postcard.sender_name }}</strong><br>
+                        <a href="mailto:{{ postcard.sender }}">
+                            {{ postcard.sender }}
+                        </a>
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center attribution">
+                    <small>
+                        {{ postcard.image_attribution }}
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-center">Follow this <a href="{{ postcard.url }}">link</a> to read the full postcard</h2>

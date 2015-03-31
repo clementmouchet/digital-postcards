@@ -1,0 +1,211 @@
+// ===========================================================================//
+// Imports
+// ===========================================================================//
+
+@import "vendor/bootstrap/variables.less";
+@import "vendor/bootstrap/mixins.less";
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+// ===========================================================================//
+// Mixins
+// ===========================================================================//
+
+/**
+ * .flex-display()
+ * @param  {String} @display: flex or inline-flex
+ */
+.flex-display(@display: flex) {
+  display: ~"-webkit-@{display}";
+  display: ~"-moz-@{display}";
+  display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+  display: ~"-ms-@{display}"; // IE11
+  display: @display;
+}
+
+/**
+ * .filter()
+ * @param  {String} @value: blur description
+ * @return {[type]}        [description]
+ */
+.filter(@value){
+  -webkit-filter: ~"@{value}";
+  -moz-filter: ~"@{value}";
+  -o-filter: ~"@{value}";
+  -ms-filter: ~"@{value}";
+  filter: @value;
+}
+
+.perspective (@value: 1000) {
+  -webkit-perspective:  @value;
+  -moz-perspective:   @value;
+  -ms-perspective:  @value;
+  perspective:    @value;
+}
+
+.transform-style(@style) {
+  -webkit-transform-style: @style;
+  -moz-transform-style: @style;
+  -ms-transform-style: @style;
+  transform-style: @style;
+}
+
+// ===========================================================================//
+// Variables
+// ===========================================================================//
+
+@frontBackground: white;
+@backBackground: @frontBackground;
+@headingBackground: @gray-lighter;
+
+// ===========================================================================//
+// Layout
+// ===========================================================================//
+
+#mail_popup {
+  display: none;
+  background-color: @frontBackground;
+
+  @media (min-height: 580px) {
+    top: 45%;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    .size(100%; 600px);
+    min-height: 320px;
+    max-height: 120%;
+    overflow-y: scroll;
+  }
+
+  @media (min-width: @screen-xs-max) {
+    .box-shadow(0 0 100px black);
+    .transition(all 0.4s ease);
+    .translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    .size(60%; 60%);
+  }
+
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) and (min-height: 700px) {
+    .size(650px; 530px);
+  }
+
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) and (min-height: @screen-sm-min) {
+    .size(800px; 650px);
+  }
+
+  @media (min-width: @screen-lg) and (min-height: @screen-sm-min) {
+    .size(800px; 650px);
+  }
+
+  .postcard {
+    z-index: 3;
+    height: 100%;
+    .transition(all 0.3s);
+
+    form {
+      height: inherit;
+      max-width: initial;
+    }
+    .front {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0 auto;
+      height: 100%;
+    }
+    .back {
+      .transform-style(preserve-3d);
+      .rotateY(180deg);
+      display: none;
+      padding-bottom: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      background-color: @backBackground;
+      width: 100%;
+      .details {
+        margin-bottom: 5px;
+        div {
+          height: inherit;
+        }
+        h3 {
+          margin-top: 5px;
+        }
+        blockquote {
+          font-size: 0.75em;
+        }
+      }
+      .stamp img {
+        width: 100%;
+      }
+      .content {
+        .form-group {
+          font-family: 'Handlee', cursive;
+          font-size: 1.2em;
+        }
+        input {
+          margin-bottom: 5px;
+          width: 100%;
+        }
+        textarea {
+          .resizable(vertical);
+          font-size: 1em;
+          height: 285px;
+        }
+      }
+      .attribution {
+        position: absolute;
+        bottom: 0px;
+
+      }
+    }
+  }
+  .flipped {
+    .rotateY(180deg);
+    .front {
+      display: none;
+      z-index: -1;
+    }
+    .back {
+      display: block;
+    }
+    .btns {
+      margin-bottom: 0px;
+    }
+  }
+  .btns {
+    height: 30px;
+    background-color: @headingBackground;
+    border-bottom: 1px solid darken(@headingBackground, 15%);
+    padding: 5px;
+    margin-bottom: -30px;
+    color: @gray-lighter;
+    text-shadow: 0px 0px 10px @gray-darker;
+    &.flipped {
+      .rotateY(0deg);
+      margin-bottom: 0px;
+      color: @gray-dark;
+      text-shadow: none;
+      button {
+        display: block;
+      }
+    }
+    button {
+      display: none;
+      margin-top: -1px;
+    }
+  }
+}
+
+.mail_popup_open {
+  #mail_popup {
+    display: block;
+  }
+  .postcard-blur-wrapper {
+    .filter(blur(7px) grayscale(50%));
+  }
+}
+
+.postcard-blur-wrapper {
+  .transition(all 0.4s ease);
+}

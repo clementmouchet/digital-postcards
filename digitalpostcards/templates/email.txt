@@ -1,0 +1,14 @@
+Dear {{ postcard.recipient_name }},
+
+{{ postcard.sender_name }} ({{ postcard.sender }}) sent you a Digital Postcard, from {{ postcard.source_url }}
+
+Follow this link ({{ postcard.url }}) to read the full postcard online
+---
+{{ postcard.title }}
+
+{{ postcard.short_desc }} - {{ postcard.long_desc }}
+
+{{ postcard.body }}
+
+Read it at {{ postcard.url }}
+

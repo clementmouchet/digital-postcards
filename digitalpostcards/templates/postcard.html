@@ -1,0 +1,85 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet"
+        href="{{ url_for('.static', filename='css/postcard.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('.static', filename='js/vendor/underscore-1.8.2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('.static', filename='js/postcard.js') }}"></script>
+    <script type="text/javascript">
+        // load the postcard
+        $('#mail_popup').postcard('handlers');
+        $('#mail_popup').postcard('open');
+    </script>
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block main %}
+    <div id="mail_popup">
+        <div class="btns clearfix">
+            <p class="text-center">
+                {{ _('Click here to flip the postcard') }}
+            </p>
+        </div>
+        <div class="postcard">
+            <div class="front" style="background-image:url({{ postcard.image }})">
+            </div>
+            <div class="back">
+
+                <div class="row details">
+                    <div class="col-md-3 col-xs-3 text-left text-uppercase">
+                        <h3>{{ postcard.title }}
+                        <small>{{ postcard.short_desc }}</small></h3>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-left">
+                        <blockquote>
+                          <p>
+                            {{ postcard.long_desc }}
+                          </p>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-1 col-xs-1"></div>
+                    <div class="col-md-2 col-xs-2 stamp" >
+                        <img src="{{ url_for('.static', filename='img/postage-stamp.png') }}"
+                                alt="">
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-md-7 col-xs-7 text-left">
+                        {{ postcard.body }}
+                    </div>
+                    <div class="col-md-5 col-xs-5 text-right">
+                        <address>
+                            <strong>{{ postcard.recipient_name }}</strong><br>
+                            {{ postcard.address_line_1 }}<br>
+                            {{ postcard.address_line_2 }}<br>
+                            {{ postcard.address_postcode }}<br>
+                            {{ postcard.address_city }}
+                        </address>
+                        <address>
+                            <strong>{{ postcard.sender_name }}</strong><br>
+                            <a href="mailto:{{ postcard.sender }}">
+                                {{ postcard.sender }}
+                            </a>
+                        </address>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center attribution">
+                        <small>
+                            {{ postcard.image_attribution }}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

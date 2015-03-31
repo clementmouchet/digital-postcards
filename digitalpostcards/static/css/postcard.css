@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+/**
+ * .flex-display()
+ * @param  {String} @display: flex or inline-flex
+ */
+/**
+ * .filter()
+ * @param  {String} @value: blur description
+ * @return {[type]}        [description]
+ */
+#mail_popup {
+  display: none;
+  background-color: white;
+}
+@media (min-height: 580px) {
+  #mail_popup {
+    top: 45%;
+  }
+}
+@media (max-width: 767px) {
+  #mail_popup {
+    width: 100%;
+    height: 600px;
+    min-height: 320px;
+    max-height: 120%;
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 767px) {
+  #mail_popup {
+    -webkit-box-shadow: 0 0 100px black;
+    box-shadow: 0 0 100px black;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) and (min-height: 700px) {
+  #mail_popup {
+    width: 650px;
+    height: 530px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-height: 768px) {
+  #mail_popup {
+    width: 800px;
+    height: 650px;
+  }
+}
+@media (min-width: 1200px) and (min-height: 768px) {
+  #mail_popup {
+    width: 800px;
+    height: 650px;
+  }
+}
+#mail_popup .postcard {
+  z-index: 3;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#mail_popup .postcard form {
+  height: inherit;
+  max-width: initial;
+}
+#mail_popup .postcard .front {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  height: 100%;
+}
+#mail_popup .postcard .back {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: none;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  background-color: white;
+  width: 100%;
+}
+#mail_popup .postcard .back .details {
+  margin-bottom: 5px;
+}
+#mail_popup .postcard .back .details div {
+  height: inherit;
+}
+#mail_popup .postcard .back .details h3 {
+  margin-top: 5px;
+}
+#mail_popup .postcard .back .details blockquote {
+  font-size: 0.75em;
+}
+#mail_popup .postcard .back .stamp img {
+  width: 100%;
+}
+#mail_popup .postcard .back .content .form-group {
+  font-family: 'Handlee', cursive;
+  font-size: 1.2em;
+}
+#mail_popup .postcard .back .content input {
+  margin-bottom: 5px;
+  width: 100%;
+}
+#mail_popup .postcard .back .content textarea {
+  resize: vertical;
+  overflow: auto;
+  font-size: 1em;
+  height: 285px;
+}
+#mail_popup .postcard .back .attribution {
+  position: absolute;
+  bottom: 0px;
+}
+#mail_popup .flipped {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#mail_popup .flipped .front {
+  display: none;
+  z-index: -1;
+}
+#mail_popup .flipped .back {
+  display: block;
+}
+#mail_popup .flipped .btns {
+  margin-bottom: 0px;
+}
+#mail_popup .btns {
+  height: 30px;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 5px;
+  margin-bottom: -30px;
+  color: #eeeeee;
+  text-shadow: 0px 0px 10px #222222;
+}
+#mail_popup .btns.flipped {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  margin-bottom: 0px;
+  color: #333333;
+  text-shadow: none;
+}
+#mail_popup .btns.flipped button {
+  display: block;
+}
+#mail_popup .btns button {
+  display: none;
+  margin-top: -1px;
+}
+.mail_popup_open #mail_popup {
+  display: block;
+}
+.mail_popup_open .postcard-blur-wrapper {
+  -webkit-filter: blur(7px) grayscale(50%);
+  -moz-filter: blur(7px) grayscale(50%);
+  -o-filter: blur(7px) grayscale(50%);
+  -ms-filter: blur(7px) grayscale(50%);
+  filter: blur(7px) grayscale(50%);
+}
+.postcard-blur-wrapper {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}

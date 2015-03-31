@@ -1,0 +1,61 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+  {{ title }} - {{ _('Digital Postcards') }}
+{% endblock %}
+
+{% block html_attribs %} lang="en" {% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet"
+        href="{{ url_for('.static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block navbar %}
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">{{ _('Digital Postcards') }}</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('index', _external=True) }}">{{ _('Digital Postcards') }}</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{ url_for('about', _external=True) }}">{{ _('About') }}</a>
+          </li>
+          <li>
+            <a href="{{ url_for('help', _external=True) }}">{{ _('Help') }}</a>
+          </li>
+          <li>
+            <a href="{{ url_for('contact', _external=True) }}">{{ _('Contact') }}</a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% block main %}
+      {{ content }}
+    {% endblock %}
+  </div>
+
+  {% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">{{ _('Digital Postcards') }}</p>
+      </div>
+    </footer>
+  {% endblock %}
+{% endblock %}
+
