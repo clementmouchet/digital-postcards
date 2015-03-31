@@ -42,7 +42,7 @@ it must be loaded before the module_
 _The module css uses [Bootstrap 3](http://getbootstrap.com/) it must be loaded before the module_
 
 It is configurable with the following options:
-
+```javascript
 	{
 	    api_post_url:           "{ domain of the webservice /api/1/postcard }",
 	    tmpl_url:               "{ domain of the webservice /js/postcard.tmpl }",
@@ -78,12 +78,14 @@ It is configurable with the following options:
 	    source_url:             "{ the source url }",
 	    redirect_timeout:       "{ a timeout if you want to redirect the user }"
 	}
+```
 
 Every option has default values which can be overridden as required.
 
 If you don't use Underscore, you should load it before the module.
 You can load all the js and css dependencies in Javascript
 
+```html
 	<script type="text/javascript">
 	 /**
 	  * Digital Postcards module
@@ -108,15 +110,19 @@ You can load all the js and css dependencies in Javascript
 	      $('<link rel="stylesheet" type="text/css" href="' + url + '" />').appendTo('head');
 	  }
 	</script>
+```
 
 Or you can simply add them normally
 
+```html
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
 	<script type="text/javascript" src="http://{domain of the webservice}/js/postcard.js"></script>
 	<link rel="stylesheet" href="http://{domain of the webservice}/css/postcard.css') }}">
+```
 
 Initialising the module is easy, all you ned to do is map the options to fields on you page (or provide values)
 
+```html
 	<script type="text/javascript">
 	 $('#mail_popup').postcard({
 	    api_post_url: "http://localhost:5000/api/1/postcard",
@@ -130,16 +136,20 @@ Initialising the module is easy, all you ned to do is map the options to fields 
 	    stamp: "http://localhost:5000/img/postage-stamp.png"
 	});
 	</script>
-
+```
 
 And add the following element to your DOM.
 
+```html
 	<div id="mail_popup"></div>
+```
 
 ## Markup & CSS
 
 Load the css file to style the popup
 
+```html
 	<link rel="stylesheet" href="http://{domain of the webservice}/css/postcard.css') }}">
+```
 
 `.postcard-blur-wrapper` can be used to apply a blur filter to the container below the popup.
