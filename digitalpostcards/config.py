@@ -1,7 +1,9 @@
+import os
+
 # database
 MONGODB_DB = 'postcards'
-MONGODB_HOST = 'localhost'
-MONGODB_USERNAME = 'postcards'
+MONGODB_HOST = os.environ.get('DB_PORT_27017_TCP_ADDR')
+MONGODB_PORT = os.environ.get('DB_PORT_27017_TCP_PORT')
 
 # email
 SEND_MAIL = False

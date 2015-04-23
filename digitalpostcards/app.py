@@ -332,4 +332,5 @@ def delete_postcard(postcard_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=app.config['DEBUG'])
+    app.run(debug=app.config['DEBUG'],
+            host='0.0.0.0')

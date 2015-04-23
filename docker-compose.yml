@@ -1,0 +1,16 @@
+db:
+  image: mongo:3.0.2
+  hostname: db
+  domainname: localdomain
+  ports:
+    - "27017:27017"
+app:
+  build: .
+  hostname: digitalpostcards
+  domainname: localdomain
+  ports:
+    - "5000:5000"
+  links:
+    - db:db
+  volumes:
+    - ./:/usr/src/app
