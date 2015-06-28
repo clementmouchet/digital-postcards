@@ -53,7 +53,15 @@
   {% block footer %}
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">{{ _('Digital Postcards') }}</p>
+
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <a href="https://edinburghcollected.org">
+              <img src="{{ url_for('.static', filename='/img/edinburgh-collected-logo.png') }}" alt="Edinburgh Collected" class="center-block"/>
+            </a>
+          </div>
+        </div>
+
       </div>
     </footer>
   {% endblock %}
