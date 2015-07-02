@@ -2,22 +2,25 @@ import os
 
 # database
 MONGODB_DB = 'postcards'
-MONGODB_HOST = os.environ.get('DB_PORT_27017_TCP_ADDR')
-MONGODB_PORT = os.environ.get('DB_PORT_27017_TCP_PORT')
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = '27017'
 
 # email
-SEND_MAIL = False
-MAIL_SERVER = 'localhost'
-MAIL_PORT = 465
-MAIL_USE_TLS = False
-MAIL_USE_SSL = True
-MAIL_USERNAME = ''
+SEND_MAIL = True
+SMTP_SERVER = 'smtp.mailgun.org'
+SMTP_LOGIN = 'postmaster@edinburghcollected.org'
+SMTP_PASSWORD = ''
+MAIL_SERVER = 'smtp.mailgun.org'
+MAIL_PORT = 587
+MAIL_USE_TLS = True
+MAIL_USE_SSL = False
+MAIL_USERNAME = 'postmaster@edinburghcollected.org'
 MAIL_PASSWORD = ''
-MAIL_DEFAULT_SENDER = ''
+MAIL_DEFAULT_SENDER = 'postmaster@edinburghcollected.org'
 
 # Admin user & pass
 ADMIN_USER = 'admin'
-ADMIN_PASSWORD = 'pass'
+ADMIN_PASSWORD = ''
 
 # disable debugging in production
-DEBUG = True
+DEBUG = False
