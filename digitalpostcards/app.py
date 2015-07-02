@@ -12,7 +12,7 @@ from datetime import datetime
 
 
 app = Flask(__name__, static_url_path="")
-app.config.from_object('config')
+app.config.from_pyfile('config.py', silent=True)
 auth = HTTPBasicAuth()
 db = MongoEngine(app)
 bootstrap = Bootstrap(app)
