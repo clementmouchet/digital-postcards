@@ -200,7 +200,7 @@
              * @return {boolean}
              */
             validate: function() {
-                var inputs = $(container).find('form').find(':input').not(':button').get();
+                var inputs = $(container).find('form').find(':input.required').not(':button').get();
                 var errors = [];
                 _.each(inputs, function(input) {
                     if (_.isEmpty($(input).val())) {
