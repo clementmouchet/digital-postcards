@@ -32,6 +32,13 @@ _Installation of Python & Mongo is beyond the scope of this Read Me._
 3. Edit the configuration as required
 4. Run the app
 
+## Quick Start
+
+_Digital Postcards comes with Docker containers & docker-compose manifest to facilitate development_
+
+```bash
+		docker-compose up
+```
 
 ## Using the JavaScript module
 
