@@ -24,18 +24,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ url_for('index', _external=True) }}">{{ _('Digital Postcards') }}</a>
+        <a class="navbar-brand" href="{{ url_for('index', _external=True, _scheme='https') }}">{{ _('Digital Postcards') }}</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="{{ url_for('about', _external=True) }}">{{ _('About') }}</a>
+            <a href="{{ url_for('about', _external=True, _scheme='https') }}">{{ _('About') }}</a>
           </li>
           <li>
-            <a href="{{ url_for('help', _external=True) }}">{{ _('Help') }}</a>
+            <a href="{{ url_for('help', _external=True, _scheme='https') }}">{{ _('Help') }}</a>
           </li>
           <li>
-            <a href="{{ url_for('contact', _external=True) }}">{{ _('Contact') }}</a>
+            <a href="{{ url_for('contact', _external=True, _scheme='https') }}">{{ _('Contact') }}</a>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
