@@ -32,7 +32,7 @@
             praesentium dolore totam, rem vero animi mollitia fuga accusantium \
             nesciunt voluptates. Aliquam, corporis, cumque! Quasi, voluptatibus\
             , labore. Nobis, ullam.",
-            image: "http://placehold.it/800x600",
+            image: "https://placehold.it/800x600",
             image_attribution: "© Lorem ipsum, Omnis",
             // transtatables & customisables
             btn_cancel: "Cancel",
