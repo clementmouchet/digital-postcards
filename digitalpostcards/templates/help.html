@@ -2,32 +2,55 @@
 {% extends "base.html" %}
 
 {% block main %}
-      <div class="page-header">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-      </div>
-            <pre><code>mongoimport -d postcards -c postcards --type json --file postcards.json</code></pre>
-            <span>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sapiente dolor nihil, exercitationem aut tempore iste ipsam, eius veniam cumque, quibusdam cupiditate soluta architecto? Sint accusantium autem cum magnam amet!</p>
-            </span>
-      	<pre><code>@app.route('/api/1/postcards', methods=['GET'])</code></pre>
-      	<span>
-      		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sapiente dolor nihil, exercitationem aut tempore iste ipsam, eius veniam cumque, quibusdam cupiditate soluta architecto? Sint accusantium autem cum magnam amet!</p>
-      	</span>
-      	<pre><code>@app.route('/api/1/postcard/&lt;<var class="text-primary">int:postcard_id</var>&gt;', methods=['GET'])</code></pre>
-      	<span>
-      		<p class="lead">Repudiandae reiciendis natus laudantium laborum eligendi ipsam, vitae, et labore ad architecto rem velit voluptatibus officia, asperiores! Alias cum placeat est amet harum, repellendus sapiente repellat, dolorem fuga dignissimos. Modi.</p>
-      	</span>
-      	<pre><code>@app.route('/api/1/postcard', methods=['POST'])</code></pre>
-      	<span>
-      		<p class="lead">Eaque vitae quia tempora libero velit, architecto mollitia et harum minus quod, alias, culpa quis qui, praesentium placeat aut voluptates dignissimos voluptatibus! Alias officia magnam ut quia assumenda tempora deleniti.</p>
-      	</span>
-      	<pre><code>@app.route('/api/1/postcard/&lt;<var class="text-warning">int:postcard_id</var>&gt;', methods=['PUT'])
-</code></pre>
-      	<span>
-      		<p class="lead">Tenetur rerum, laborum, laudantium laboriosam natus eligendi ullam harum dolorem nulla et nobis impedit reprehenderit beatae aliquam dolor autem assumenda amet doloremque vero quia libero fuga voluptates saepe magnam. Quidem.</p>
-      	</span>
-      	<pre><code>@app.route('/api/1/postcard/&lt;<var class="text-danger">int:postcard_id</var>&gt;', methods=['DELETE'])</code></pre>
-      	<span>
-      		<p class="lead">Tempore earum perferendis minus doloremque, vero, atque eligendi quae sunt at facere veniam dolores quaerat, consectetur voluptate dicta, aliquid laborum quisquam sit officiis quo quis et iure iste. Doloribus, ipsa.</p>
-      	</span>
+    <div class="page-header">
+        <h1>Digital Postcards API</h1>
+    </div>
+    <span>
+        <p>
+            Digital Postcards is a simple REST API allowing you to store messages basic details of a "digital
+            postcard" provided by the project Javascript module.
+        </p>
+    </span>
+    <h2>Public Endpoints</h2>
+    <pre><code>@app.route('/api/1/postcard/&lt;<var class="text-primary">int:postcard_id</var>&gt;', methods=['GET'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoints returns the postcard details for a given postcard ID.
+        </p>
+        </span>
+    <pre><code>@app.route('/api/1/postcard', methods=['POST'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoint creates a postcard and adds the given postcard details to the database and sends a
+            notification to the recipient.
+        </p>
+    </span>
+
+    <h2>Endpoints requiring Basic Authentication: <small>@auth.login_required</small></h2>
+    <pre><code>@app.route('/api/1/postcard/&lt;<var class="text-warning">int:postcard_id</var>&gt;', methods=['PUT'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoints triggers a job to send the email notification of a given postcard.
+        </p>
+    </span>
+    <pre><code>@app.route('/api/1/postcards', methods=['GET'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoint returns all postcards in the database.
+        </p>
+    </span>
+    <pre><code>@app.route('/api/1/postcards', methods=['DELETE'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoint deletes all postcards in the database.
+        </p>
+    </span>
+    <pre><code>@app.route('/api/1/postcard/&lt;<var class="text-danger">int:postcard_id</var>&gt;', methods=['DELETE'])</code></pre>
+    <span>
+        <p class="lead">
+            This endpoint deletes a postcard for a given postcard ID.
+        </p>
+    </span>
+
+
 {% endblock %}
