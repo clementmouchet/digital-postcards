@@ -53,7 +53,7 @@ class Postcard(db.Document):
     token = db.UUIDField(default=uuid.uuid4(), binary=False, required=True)
 
     def get_absolute_url(self):
-        url = url_for('show_postcard', postcard_id=self.postcard_id, _external=True)
+        url = url_for('show_postcard', postcard_id=self.postcard_id, _external=True, _scheme='https')
         return "%s?token=%s" % (url, self.token)
 
     def get_id(self):
@@ -144,7 +144,7 @@ def send_email(postcard):
 @app.route('/api/')
 @app.route('/api/1/')
 def index():
-    return jsonify({'help': 'Get help at %s' % url_for('help', _external=True)})
+    return jsonify({'help': 'Get help at %s' % url_for('help', _external=True, _scheme='https')})
 
 
 @app.route('/about')
