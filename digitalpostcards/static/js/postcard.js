@@ -19,7 +19,7 @@
         var options = {};
         if (_.isObject(param)) options = param;
         /**
-         * settings: defaul settings of the module. All can be overriden
+         * settings: defaul settings of the module. All can be overridden
          * @type {Object}
          */
         var settings = $.extend({
