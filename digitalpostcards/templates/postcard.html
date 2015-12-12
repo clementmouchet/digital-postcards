@@ -57,12 +57,21 @@
                     <div class="col-md-5 col-xs-5 text-right">
                         <address>
                             <strong>{{ postcard.recipient_name }}</strong><br>
+                          {% if postcard.address_line_1 %}
                             {{ postcard.address_line_1 }}<br>
+                          {% endif %}
+                          {% if postcard.address_line_2 %}
                             {{ postcard.address_line_2 }}<br>
+                          {% endif %}
+                          {% if postcard.address_postcode %}
                             {{ postcard.address_postcode }}<br>
+                          {% endif %}
+                          {% if postcard.address_city %}
                             {{ postcard.address_city }}
+                          {% endif %}
                         </address>
                         <address>
+                            From:
                             <strong>{{ postcard.sender_name }}</strong><br>
                             <a href="mailto:{{ postcard.sender }}">
                                 {{ postcard.sender }}
