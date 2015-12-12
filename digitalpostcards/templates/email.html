@@ -25,6 +25,12 @@
     font-size: 1.2em;
 }
 
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 address {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -52,7 +58,7 @@ blockquote {
 <div id="mail_popup">
     <div class="postcard">
         <div class="front">
-            <img src="{{ postcard.image }}" alt="{{ postcard.title }}">
+            <img src="{{ postcard.image }}" alt="{{ postcard.title }}" class="img-responsive">
         </div>
         <div class="back">
             <div class="row details">
