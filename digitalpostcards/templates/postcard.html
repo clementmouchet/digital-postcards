@@ -83,6 +83,10 @@
                     <div class="col-md-12 text-center attribution">
                         <small>
                             {{ postcard.image_attribution }}
+                          {% if postcard.image_attribution %}
+                            &nbsp;|&nbsp;
+                          {% endif %}
+                            <a href="{{ postcard.source_url }}">Original Memory on Edinburgh Collected</a>
                         </small>
                     </div>
                 </div>
