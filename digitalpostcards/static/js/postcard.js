@@ -138,7 +138,7 @@
                                           _.pluck(inputs, 'value'));
 
                 var stamp_url;
-                if (settings.stamp.indexOf('http') > -1) {
+                if (settings.stamp.indexOf('http') > -1 && settings.stamp.indexOf('//') > -1) {
                     stamp_url = settings.stamp;
                 }
                 if (!location.origin) {
