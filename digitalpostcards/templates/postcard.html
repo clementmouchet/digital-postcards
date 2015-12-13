@@ -46,8 +46,12 @@
                     </div>
                     <div class="col-md-1 col-xs-1"></div>
                     <div class="col-md-2 col-xs-2 stamp" >
-                        <img src="{{ url_for('.static', filename='img/postage-stamp.png') }}"
-                                alt="">
+                        <img src="
+                        {% if postcard.stamp %}
+                            {{ postcard.stamp }}
+                        {% else %}
+                          {{ url_for('.static', filename='img/postage-stamp.png') }}
+                        {% endif %}" alt="">
                     </div>
                 </div>
                 <div class="row content">
