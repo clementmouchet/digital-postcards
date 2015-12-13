@@ -40,6 +40,7 @@ class Postcard(db.Document):
     title = db.StringField(max_length=255, required=True)
     short_desc = db.StringField(max_length=255, required=True)
     long_desc = db.StringField(max_length=255, required=True)
+    stamp = db.URLField(required=True)
     image = db.URLField(required=True)
     image_attribution = db.StringField(max_length=255, required=True)
     address_line_1 = db.StringField(max_length=255)
@@ -102,7 +103,7 @@ def make_public_postcard(postcard, count_view=True):
                 'token', 'sent', 'date_sent', 'date_added', 'date_modified',
                 'address_line_1', 'address_line_2', 'address_city',
                 'address_postcode', 'subject', 'body', 'title', 'short_desc',
-                'long_desc', 'image', 'image_attribution', 'views', 'source_url']:
+                'long_desc', 'stamp', 'image', 'image_attribution', 'views', 'source_url']:
         result[key] = postcard[key]
     result['url'] = postcard.get_absolute_url()
 
@@ -246,6 +247,7 @@ def create_postcard():
                         title=data_dict.get('title'),
                         short_desc=data_dict.get('short_desc'),
                         long_desc=data_dict.get('long_desc'),
+                        stamp=data_dict.get('stamp'),
                         image=data_dict.get('image'),
                         image_attribution=data_dict.get('image_attribution'),
                         address_line_1=data_dict.get('address_line_1'),

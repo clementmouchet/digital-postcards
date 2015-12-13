@@ -137,15 +137,25 @@
                 var user_data = _.object(_.pluck(inputs, 'name'),
                                           _.pluck(inputs, 'value'));
 
+                var stamp_url;
+                if (settings.stamp.indexOf('http') > -1) {
+                    stamp_url = settings.stamp;
+                }
+                if (!location.origin) {
+                    location.origin = location.protocol + "//" + location.host;
+                }
+                stamp_url = location.origin + '/' + settings.stamp;
+                
                 var page_data = {
                     "title": settings.title,
                     "short_desc": settings.short_desc,
                     "long_desc": settings.long_desc,
+                    "stamp": stamp_url,
                     "image": settings.image,
                     "image_attribution": settings.image_attribution,
                     "body": settings.body,
                     "source_url": settings.source_url,
-                }
+                };
 
                 var data = $.extend(user_data, page_data);
 
