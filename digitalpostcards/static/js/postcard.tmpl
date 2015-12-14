@@ -12,8 +12,8 @@
         <form action="<%- postcard.api_post_url %>" method="post"
                 autocomplete="on"
                 accept-charset="UTF-8">
-            <div class="front" style="background-image:url(<%- postcard.image %>)">
-                <!-- <img class="image" src="<%- postcard.image %>" alt="" title="" /> -->
+            <div class="front">
+                <img class="img-responsive img-postcard" src="<%- postcard.image %>" alt="<%- postcard.title %>" title="<%- postcard.title %>" />
             </div>
             <div class="back">
                 <div class="row details">

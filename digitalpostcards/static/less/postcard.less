@@ -112,6 +112,13 @@
       background-size: cover;
       margin: 0 auto;
       height: 100%;
+
+      .img-postcard {
+        margin-top: 4%;
+        max-height: 94%;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     .back {
       .transform-style(preserve-3d);
@@ -139,17 +146,12 @@
         width: 100%;
       }
       .content {
-        .form-group {
-          font-family: 'Handlee', cursive;
-          font-size: 1.2em;
-        }
         input {
           margin-bottom: 5px;
           width: 100%;
         }
         textarea {
           .resizable(vertical);
-          font-size: 1em;
           height: 285px;
         }
       }
@@ -174,7 +176,7 @@
     }
   }
   .btns {
-    height: 30px;
+    height: 5%;
     background-color: @headingBackground;
     border-bottom: 1px solid darken(@headingBackground, 15%);
     padding: 5px;
