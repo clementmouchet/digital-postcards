@@ -140,11 +140,12 @@
                 var stamp_url;
                 if (settings.stamp.indexOf('http') > -1 || settings.stamp.indexOf('//') > -1) {
                     stamp_url = settings.stamp;
+                } else {
+                    if (!location.origin) {
+                        location.origin = location.protocol + "//" + location.host;
+                    }
+                    stamp_url = location.origin + '/' + settings.stamp;
                 }
-                if (!location.origin) {
-                    location.origin = location.protocol + "//" + location.host;
-                }
-                stamp_url = location.origin + '/' + settings.stamp;
                 
                 var page_data = {
                     "title": settings.title,
