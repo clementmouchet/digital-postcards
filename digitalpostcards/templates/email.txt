@@ -1,8 +1,9 @@
 Dear {{ postcard.recipient_name }},
 
-{{ postcard.sender_name }} ({{ postcard.sender }}) sent you a Digital Postcard, from {{ postcard.source_url }}
+{{ postcard.sender_name }} ({{ postcard.sender }}) sent you a Digital Postcard
+(www.edinburghcollected.org)
 
-Follow this link ({{ postcard.url }}) to read the full postcard online
+Read the full postcard online ({{ postcard.url }})
 ---
 {{ postcard.title }}
 
@@ -10,5 +11,5 @@ Follow this link ({{ postcard.url }}) to read the full postcard online
 
 {{ postcard.body }}
 
-Read it at {{ postcard.url }}
+Share your memories and make history with Edinburgh Collected (www.edinburghcollected.org)
 

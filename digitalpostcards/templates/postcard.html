@@ -40,8 +40,11 @@
                     </div>
                     <div class="col-md-6 col-xs-6 text-left">
                         <blockquote>
-                          <p>
-                            {{ postcard.long_desc }}
+                          <p class="long_desc">
+                            A digital postcard from Edinburgh Collected.
+                          </p>
+                          <p class="long_desc">
+                            Share your memories and make history with Edinburgh Collected <a href="https://www.edinburghcollected.org" target="_blank">www.edinburghcollected.org</a>
                           </p>
                         </blockquote>
                     </div>
@@ -59,7 +62,7 @@
                     <div class="col-md-7 col-xs-7 text-left">
                         {{ postcard.body }}
                     </div>
-                    <div class="col-md-5 col-xs-5 text-right">
+                    <div class="col-md-5 col-xs-5 text-right" style="margin-top: 30px;">
                         <address>
                             <strong>{{ postcard.recipient_name }}</strong><br>
                           {% if postcard.address_line_1 %}

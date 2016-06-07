@@ -131,7 +131,6 @@ def send_email(postcard):
     """
     msg = Message(subject=postcard.subject,
                   recipients=[postcard.recipient],
-                  cc=[postcard.sender],
                   reply_to=postcard.sender,
                   body=render_template('email.txt', postcard=postcard),
                   html=render_template('email.html', postcard=postcard))
