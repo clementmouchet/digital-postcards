@@ -10,7 +10,7 @@
  */
 #mail_popup {
   display: none;
-  background-color: #ffffff;
+  background-color: white;
 }
 @media (min-height: 580px) {
   #mail_popup {
@@ -28,8 +28,8 @@
 }
 @media (min-width: 767px) {
   #mail_popup {
-    -webkit-box-shadow: 0 0 100px #000000;
-    box-shadow: 0 0 100px #000000;
+    -webkit-box-shadow: 0 0 100px black;
+    box-shadow: 0 0 100px black;
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -75,19 +75,21 @@
 #mail_popup .postcard .front {
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   margin: 0 auto;
   height: 100%;
+  cursor: pointer;
 }
 #mail_popup .postcard .front .img-postcard {
   margin-top: 4%;
   max-height: 94%;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 #mail_popup .postcard .back {
   -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform: rotateY(180deg);
@@ -99,7 +101,7 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
 }
 #mail_popup .postcard .back .details {
@@ -112,7 +114,7 @@
   margin-top: 5px;
 }
 #mail_popup .postcard .back .details blockquote {
-  font-size: 0.75em;
+  font-size: 1em;
 }
 #mail_popup .postcard .back .stamp img {
   width: 100%;
@@ -154,6 +156,7 @@
   margin-bottom: -30px;
   color: #eeeeee;
   text-shadow: 0px 0px 10px #222222;
+  cursor: pointer;
 }
 #mail_popup .btns.flipped {
   -webkit-transform: rotateY(0deg);

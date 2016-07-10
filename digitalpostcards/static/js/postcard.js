@@ -35,7 +35,7 @@
             image: "https://placehold.it/800x600",
             image_attribution: "© Lorem ipsum, Omnis",
             // transtatables & customisables
-            btn_cancel: "Cancel",
+            btn_cancel: '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>',
             btn_send: "Send Postcard",
             help_text: "Click here to flip the postcard",
             // input placeholders

@@ -60,3 +60,5 @@ target/
 # misc
 .idea/
 virtualenv
+node_modules
+out
