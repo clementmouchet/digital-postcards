@@ -2,24 +2,24 @@
         <button type="button"
                 class="btn btn-danger btn-xs pull-left"
                 onclick="$('#mail_popup').postcard('close');">
-            <%- postcard.btn_cancel %>
+            <%= postcard.btn_cancel %>
         </button>
         <p class="text-center">
-            <%- postcard.help_text %>
+            <%= postcard.help_text %>
         </p>
     </div>
     <div class="postcard">
-        <form action="<%- postcard.api_post_url %>" method="post"
+        <form action="<%= postcard.api_post_url %>" method="post"
                 autocomplete="on"
                 accept-charset="UTF-8">
             <div class="front">
-                <img class="img-responsive img-postcard" src="<%- postcard.image %>" alt="<%- postcard.title %>" title="<%- postcard.title %>" />
+                <img class="img-responsive img-postcard" src="<%= postcard.image %>" alt="<%= postcard.title %>" title="<%= postcard.title %>" />
             </div>
             <div class="back">
                 <div class="row details">
                     <div class="col-md-4 col-xs-4 text-left text-uppercase">
-                        <h3><%- postcard.title %>
-                        <small><%- postcard.short_desc %></small></h3>
+                        <h3><%= postcard.title %>
+                        <small><%= postcard.short_desc %></small></h3>
                     </div>
                     <div class="col-md-5 col-xs-5 text-left">
                         <blockquote>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-1 col-xs-1"></div>
                     <div class="col-md-2 col-xs-2 stamp">
-                        <img src="<%- postcard.stamp %>" alt="poscard stamp">
+                        <img src="<%= postcard.stamp %>" alt="poscard stamp">
                     </div>
                 </div>
                 <div class="row content">
@@ -43,13 +43,13 @@
                                         class="form-control required"
                                         required="required"
                                         type="text"
-                                        placeholder="<%- postcard.placeholders.subject %>">
+                                        placeholder="<%= postcard.placeholders.subject %>">
                         </div>
                         <div class="body form-group">
                             <textarea name="body"
                                         class="form-control required"
                                         required="required"
-                                        placeholder="<%- postcard.placeholders.body %>"></textarea>
+                                        placeholder="<%= postcard.placeholders.body %>"></textarea>
                         </div>
                     </div>
                     <div class="col-md-5 col-xs-5 text-right"
@@ -62,13 +62,13 @@
                                         class="form-control required"
                                         required="required"
                                         type="text"
-                                        placeholder="<%- postcard.placeholders.recipient_name %>">
+                                        placeholder="<%= postcard.placeholders.recipient_name %>">
                                 </strong>
                                 <input name="recipient"
                                         class="form-control required"
                                         required="required"
                                         type="email"
-                                        placeholder="<%- postcard.placeholders.recipient %>">
+                                        placeholder="<%= postcard.placeholders.recipient %>">
                             </div>
                         </address>
                         <address>
@@ -78,26 +78,26 @@
                                         class="form-control required"
                                         required="required"
                                         type="text"
-                                        placeholder="<%- postcard.placeholders.sender_name %>">
+                                        placeholder="<%= postcard.placeholders.sender_name %>">
                                 </strong>
                                 <input name="sender"
                                         class="form-control required"
                                         required="required"
                                         type="email"
-                                        placeholder="<%- postcard.placeholders.sender %>">
+                                        placeholder="<%= postcard.placeholders.sender %>">
                             </div>
                         </address>
                         <button class="btn btn-sm btn-primary pull-right"
                                 type="button"
                                 data-action="send">
-                            <%- postcard.btn_send %>
+                            <%= postcard.btn_send %>
                         </button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center attribution">
                         <small>
-                            <%- postcard.image_attribution %>
+                            <%= postcard.image_attribution %>
                         </small>
                     </div>
                 </div>
